@@ -66,6 +66,23 @@ public class SimpleGrammar extends Grammar {
         String[] verb2 = {"sinh"};
         RHS[] verbRHS = {new RHS(verb1), new RHS(verb2)};
         Rules.put("V", verbRHS);
+
+        String n1 = "hoc sinh";
+        String n2 = "sinh hoc";
+        String v1 = "hoc";
+        String v2 = "sinh";
+        String[] noun = {"N"};
+        String[] verb = {"V"};
+
+        Terminal n10 = new Terminal(n1, noun);
+        Terminal n11 = new Terminal(n2, noun);
+        Terminal v10 = new Terminal(v1, verb);
+        Terminal v11 = new Terminal(v2, verb);
+
+        Terminals.add(n10);
+        Terminals.add(n11);
+        Terminals.add(v10);
+        Terminals.add(v11);
     }
 
     private void initPOS() {

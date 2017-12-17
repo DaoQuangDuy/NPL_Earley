@@ -76,11 +76,43 @@ public class EarleyParser {
         RHS[] rhs = grammar.getRHS(lhs);
         if (rhs != null) {
             int j = s.getJ();
-            for (int i = 0; i < rhs.length; i++) {
-                State ns = new State(lhs, rhs[i].addDot(), j, j);
-                da_duoc_duyet_trong_tung_cot[j].addState(ns);
-                charts[j].addState(ns);
+            // cai tien buoc duyet bang cach doc truoc 2 tu loai
+            if (j != sentence.length) {
+                String[] pos = grammar.getPOS(sentence[j]);
+                for (int p = 0; p < pos.length; p++) {
+                    System.out.println("POS" + pos[p]);
+                    for (int z = 0; z < rhs.length; z++) {
+                        //asd
+                        System.out.println("rhs" + rhs[z].getTerms()[0]);
+                        if (rhs[z].getTerms()[0].indexOf(pos[p]) > -1) {
+                            State ns = new State(lhs, rhs[z].addDot(), j, j);
+                            da_duoc_duyet_trong_tung_cot[j].addState(ns);
+                            charts[j].addState(ns);
+                        } else {
+                            String left = rhs[z].getTerms()[0];
+                            System.out.println("LEFT" + left);
+                            RHS[] rhsOfLeft = grammar.getRHS(left);
+                            if (rhsOfLeft != null) {
+                                for (int m = 0; m < rhsOfLeft.length; m++) {
+                                    System.out.println("RHS" + rhsOfLeft[m]);
+                                    if (rhsOfLeft[m].getTerms()[0].indexOf(pos[p]) > -1) {
+                                        State ns = new State(lhs, rhs[m].addDot(), j, j);
+                                        da_duoc_duyet_trong_tung_cot[j].addState(ns);
+                                        charts[j].addState(ns);
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            } else {
+                for (int i = 0; i < rhs.length; i++) {
+                    State ns = new State(lhs, rhs[i].addDot(), j, j);
+                    da_duoc_duyet_trong_tung_cot[j].addState(ns);
+                    charts[j].addState(ns);
+                }
             }
+
         }
     }
 

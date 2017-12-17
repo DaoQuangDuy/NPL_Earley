@@ -1,7 +1,7 @@
 package component;
 
 public class Main {
-
+    public static String[] dauvao;
     public static void main(String[] args) {
 //        String[] sentence1
 //                = {"John", "called", "Mary"};
