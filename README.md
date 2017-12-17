@@ -1,1 +1,1 @@
-"# NPL_Earley" 
+Bản ban đầu, chưa cải tiến
