@@ -6,7 +6,7 @@ public class Main {
 //        String[] sentence1
 //                = {"John", "called", "Mary"};
         String[] sentence2
-                = {"hoc sinh", "hoc", "sinh hoc"};
+                = {"Tôi", "sẽ", "cố gắng", "thi", "tốt"};
         Grammar grammar = new SimpleGrammar();
         EarleyParser parser = new EarleyParser(grammar);
 //        test(sentence1, parser);
