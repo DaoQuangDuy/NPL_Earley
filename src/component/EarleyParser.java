@@ -6,6 +6,7 @@ public class EarleyParser {
     private String[] sentence;
     private Chart[] charts;
     private Chart[] da_duoc_duyet_trong_tung_cot;
+    static boolean isJoin = false;
 
     public EarleyParser(Grammar g) {
         grammar = g;
@@ -56,6 +57,9 @@ public class EarleyParser {
                     {
                         scanner(st);
                         flag = false;
+                        if (isJoin) {
+                            predictor(st);
+                        }
                     } else {
                         predictor(st); // A is NOT a part of speech.
                         flag = false;
@@ -88,7 +92,7 @@ public class EarleyParser {
                         for (int l = 0; l < rhs[z].getTerms().length; l++) {
                             lengthTerm += rhs[z].getTerms()[l].length();
                         }
-                        if (lengthTerm + j <= sentence.length) {
+                        if (lengthTerm + j <= sentence.length || grammar.isPartOfSpeech(rhs[z].getTerms()[0])) {
                             if (rhs[z].getTerms()[0].indexOf(pos[p]) > -1) {
                                 State ns = new State(lhs, rhs[z].addDot(), j, j);
                                 da_duoc_duyet_trong_tung_cot[j].addState(ns);
@@ -97,7 +101,7 @@ public class EarleyParser {
                                 String left = rhs[z].getTerms()[0];
                                 System.out.println("LEFT" + left);
                                 RHS[] rhsOfLeft = grammar.getRHS(left);
-                                if (rhsOfLeft != null) {
+                                if (rhsOfLeft != null && left != lhs) {
                                     for (int m = 0; m < rhsOfLeft.length; m++) {
                                         System.out.println("RHS" + rhsOfLeft[m]);
                                         if (rhsOfLeft[m].getTerms()[0].indexOf(pos[p]) > -1) {
@@ -112,17 +116,18 @@ public class EarleyParser {
                     }
                 }
             } else {
-                for (int i = 0; i < rhs.length; i++) {
-                    State ns = new State(lhs, rhs[i].addDot(), j, j);
-                    da_duoc_duyet_trong_tung_cot[j].addState(ns);
-                    charts[j].addState(ns);
-                }
+//                for (int i = 0; i < rhs.length; i++) {
+//                    State ns = new State(lhs, rhs[i].addDot(), j, j);
+//                    da_duoc_duyet_trong_tung_cot[j].addState(ns);
+//                    charts[j].addState(ns);
+//                }
             }
 
         }
     }
 
     private void scanner(State s) {
+        isJoin = true;
         String lhs = s.getAfterDot();
         RHS[] rhs = grammar.getRHS(lhs);
         int i = s.getI();
@@ -133,6 +138,7 @@ public class EarleyParser {
                 State ns = new State(lhs, rhs[a].addDotLast(), j, j + 1); // fix j - > i
                 charts[j + 1].addState(ns);
                 da_duoc_duyet_trong_tung_cot[j].addState(ns);
+                isJoin = false;
             }
         }
     }

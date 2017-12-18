@@ -5,8 +5,12 @@ public class Main {
     public static void main(String[] args) {
 //        String[] sentence1
 //                = {"John", "called", "Mary"};
+//        String[] sentence2
+//                = {"hoc sinh", "hoc", "sinh hoc"};
+//        String[] sentence2
+//                = {"Papa", "ate", "the", "caviar", "with", "a", "spoon"};
         String[] sentence2
-                = {"hoc sinh", "hoc", "sinh hoc"};
+                = {"Bò", "vàng", "gặm", "cỏ", "non"};
         Grammar grammar = new SimpleGrammar();
         EarleyParser parser = new EarleyParser(grammar);
 //        test(sentence1, parser);
