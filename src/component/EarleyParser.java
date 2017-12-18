@@ -84,21 +84,27 @@ public class EarleyParser {
                     for (int z = 0; z < rhs.length; z++) {
                         //asd
                         System.out.println("rhs" + rhs[z].getTerms()[0]);
-                        if (rhs[z].getTerms()[0].indexOf(pos[p]) > -1) {
-                            State ns = new State(lhs, rhs[z].addDot(), j, j);
-                            da_duoc_duyet_trong_tung_cot[j].addState(ns);
-                            charts[j].addState(ns);
-                        } else {
-                            String left = rhs[z].getTerms()[0];
-                            System.out.println("LEFT" + left);
-                            RHS[] rhsOfLeft = grammar.getRHS(left);
-                            if (rhsOfLeft != null) {
-                                for (int m = 0; m < rhsOfLeft.length; m++) {
-                                    System.out.println("RHS" + rhsOfLeft[m]);
-                                    if (rhsOfLeft[m].getTerms()[0].indexOf(pos[p]) > -1) {
-                                        State ns = new State(lhs, rhs[m].addDot(), j, j);
-                                        da_duoc_duyet_trong_tung_cot[j].addState(ns);
-                                        charts[j].addState(ns);
+                        int lengthTerm = 0;
+                        for (int l = 0; l < rhs[z].getTerms().length; l++) {
+                            lengthTerm += rhs[z].getTerms()[l].length();
+                        }
+                        if (lengthTerm + j <= sentence.length) {
+                            if (rhs[z].getTerms()[0].indexOf(pos[p]) > -1) {
+                                State ns = new State(lhs, rhs[z].addDot(), j, j);
+                                da_duoc_duyet_trong_tung_cot[j].addState(ns);
+                                charts[j].addState(ns);
+                            } else {
+                                String left = rhs[z].getTerms()[0];
+                                System.out.println("LEFT" + left);
+                                RHS[] rhsOfLeft = grammar.getRHS(left);
+                                if (rhsOfLeft != null) {
+                                    for (int m = 0; m < rhsOfLeft.length; m++) {
+                                        System.out.println("RHS" + rhsOfLeft[m]);
+                                        if (rhsOfLeft[m].getTerms()[0].indexOf(pos[p]) > -1) {
+                                            State ns = new State(lhs, rhs[m].addDot(), j, j);
+                                            da_duoc_duyet_trong_tung_cot[j].addState(ns);
+                                            charts[j].addState(ns);
+                                        }
                                     }
                                 }
                             }
