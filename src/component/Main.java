@@ -1,7 +1,9 @@
 package component;
 
 public class Main {
+
     public static String[] dauvao;
+
     public static void main(String[] args) {
 //        String[] sentence1
 //                = {"John", "called", "Mary"};
@@ -9,8 +11,10 @@ public class Main {
 //                = {"hoc sinh", "hoc", "sinh hoc"};
 //        String[] sentence2
 //                = {"Papa", "ate", "the", "caviar", "with", "a", "spoon"};
+//        String[] sentence2
+//                = {"Bò", "vàng", "gặm", "cỏ", "non"};
         String[] sentence2
-                = {"Bò", "vàng", "gặm", "cỏ", "non"};
+                = {"Tôi", "sẽ", "cố gắng", "thi", "tốt"};
         Grammar grammar = new SimpleGrammar();
         EarleyParser parser = new EarleyParser(grammar);
 //        test(sentence1, parser);

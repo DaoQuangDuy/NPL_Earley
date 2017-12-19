@@ -28,7 +28,7 @@ public class EarleyParser {
             charts[i] = new Chart();
             da_duoc_duyet_trong_tung_cot[i] = new Chart();
         }
-        String[] start1 = {"@", "S"};
+        String[] start1 = {"@", "C"};
         RHS startRHS = new RHS(start1);
         State start = new State("$", startRHS, 0, 0);
         charts[0].addState(start);
@@ -68,7 +68,7 @@ public class EarleyParser {
             }
         }
         // Determine whether a successful parse.
-        String[] fin = {"S", "@"};
+        String[] fin = {"C", "@"};
         RHS finRHS = new RHS(fin);
         State finish = new State("$", finRHS, 0, sentence.length);
         State last = charts[sentence.length].getState(charts[sentence.length].size() - 1);
@@ -105,7 +105,7 @@ public class EarleyParser {
                                     for (int m = 0; m < rhsOfLeft.length; m++) {
                                         System.out.println("RHS" + rhsOfLeft[m]);
                                         if (rhsOfLeft[m].getTerms()[0].indexOf(pos[p]) > -1) {
-                                            State ns = new State(lhs, rhs[m].addDot(), j, j);
+                                            State ns = new State(lhs, rhs[z].addDot(), j, j);
                                             da_duoc_duyet_trong_tung_cot[j].addState(ns);
                                             charts[j].addState(ns);
                                         }
