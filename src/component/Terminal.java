@@ -12,9 +12,9 @@ package component;
 public class Terminal {
 
     private String terminal;
-    private String[] POS;
+    private String POS;
 
-    public Terminal(String terminals, String[] POS) {
+    public Terminal(String terminals, String POS) {
         this.terminal = terminals;
         this.POS = POS;
     }
@@ -23,7 +23,7 @@ public class Terminal {
         return terminal;
     }
 
-    public String[] getPOS() {
+    public String getPOS() {
         return POS;
     }
 }

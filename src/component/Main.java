@@ -11,10 +11,10 @@ public class Main {
 //                = {"hoc sinh", "hoc", "sinh hoc"};
 //        String[] sentence2
 //                = {"Papa", "ate", "the", "caviar", "with", "a", "spoon"};
-//        String[] sentence2
-//                = {"Bò", "vàng", "gặm", "cỏ", "non"};
         String[] sentence2
-                = {"Tôi", "sẽ", "cố gắng", "thi", "tốt"};
+                = {"Bò", "vàng", "gặm", "cỏ", "non"};
+//        String[] sentence2
+//                = {"Tôi", "sẽ", "cố gắng", "thi", "tốt"};
         Grammar grammar = new SimpleGrammar();
         EarleyParser parser = new EarleyParser(grammar);
 //        test(sentence1, parser);

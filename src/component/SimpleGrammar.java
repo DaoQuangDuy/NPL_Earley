@@ -13,209 +13,7 @@ public class SimpleGrammar extends Grammar {
     }
 
     private void initRules() {
-//        String[] s1 = {"NP", "VP"};
-//        RHS[] sRHS = {new RHS(s1)};
-//        Rules.put("S", sRHS);
-//        String[] np1 = {"NP", "PP"};
-//        String[] np2 = {"Noun"};
-//        RHS[] npRHS = {new RHS(np1), new RHS(np2)};
-//        Rules.put("NP", npRHS);
-//        String[] vp1 = {"Verb", "NP"};
-//        String[] vp2 = {"VP", "PP"};
-//        RHS[] vpRHS = {new RHS(vp1), new RHS(vp2)};
-//        Rules.put("VP", vpRHS);
-//        String[] pp1 = {"Prep", "NP"};
-//        RHS[] ppRHS = {new RHS(pp1)};
-//        Rules.put("PP", ppRHS);
-//        String[] noun1 = {"John"};
-//        String[] noun2 = {"Mary"};
-//        String[] noun3 = {"Denver"};
-//        RHS[] nounRHS = {new RHS(noun1), new RHS(noun2), new RHS(noun3)};
-//        Rules.put("Noun", nounRHS);
-//        String[] verb = {"called"};
-//        RHS[] verbRHS = {new RHS(verb)};
-//        Rules.put("Verb", verbRHS);
-//        String[] prep = {"from"};
-//        RHS[] prepRHS = {new RHS(prep)};
-//        Rules.put("Prep", prepRHS);
-//        String[] s1 = {"N", "VP"};
-//        String[] s2 = {"P", "VP"};
-//        String[] s3 = {"N", "AP"};
-//        String[] s4 = {"VP", "AP"};
-//
-//        RHS[] sRHS = {new RHS(s1), new RHS(s2), new RHS(s3), new RHS(s4)};
-//        Rules.put("S", sRHS);
-//
-//        String[] vp1 = {"V", "N"};
-//        String[] vp2 = {"V", "NP"};
-//        RHS[] vpRHS = {new RHS(vp1), new RHS(vp2)};
-//        Rules.put("VP", vpRHS);
-//        String[] np1 = {"N", "N"};
-//        String[] np2 = {"N", "A"};
-//        RHS[] npRHS = {new RHS(np1), new RHS(np2)};
-//        Rules.put("NP", npRHS);
-//        String[] ap = {"R", "A"};
-//        RHS[] apRHS = {new RHS(ap)};
-//        Rules.put("AP", apRHS);
-//
-//        String[] noun1 = {"hoc sinh"};
-//        String[] noun2 = {"sinh hoc"};
-//        RHS[] nounRHS = {new RHS(noun1), new RHS(noun2)};
-//        Rules.put("N", nounRHS);
-//        String[] verb1 = {"hoc"};
-//        String[] verb2 = {"sinh"};
-//        RHS[] verbRHS = {new RHS(verb1), new RHS(verb2)};
-//        Rules.put("V", verbRHS);
-//
-        String p111 = "Tôi";
-        String r211 = "sẽ";
-        String v111 = "cố gắng";
-        String v211 = "thi";
-        String a211 = "tốt";
-        String[] rnoun111 = {"R"};
-        String[] pnoun111 = {"P"};
-        String[] verb111 = {"V"};
-        String[] anouns111 = {"A"};
-//
-        Terminal p10 = new Terminal(p111, pnoun111);
-        Terminal r11 = new Terminal(r211, rnoun111);
-        Terminal v10 = new Terminal(v111, verb111);
-        Terminal v11 = new Terminal(v211, verb111);
-        Terminal a11324 = new Terminal(a211, anouns111);
-
-        Terminals.add(p10);
-        Terminals.add(r11);
-        Terminals.add(v10);
-        Terminals.add(v11);
-        Terminals.add(a11324);
-
-//////////////////////
-//        String[] s1 = {"CN", "VN"};
-//
-//        RHS[] sRHS = {new RHS(s1)};
-//        Rules.put("C", sRHS);
-//
-//        String[] vp1 = {"ĐgN"};
-//        RHS[] vpRHS = {new RHS(vp1)};
-//        Rules.put("VN", vpRHS);
-//        String[] np1 = {"DN"};
-//        String[] np2 = {"ĐgN"};
-//        RHS[] npRHS = {new RHS(np1), new RHS(np2)};
-//        Rules.put("CN", npRHS);
-//
-//        String[] dn1 = {"DT", "TT"};
-//        String[] dn2 = {"DN", "TT"};
-//        RHS[] dnRHS = {new RHS(dn1), new RHS(dn2)};
-//        Rules.put("DN", dnRHS);
-//
-//        String[] dng1 = {"ĐgT", "DN"};
-//        String[] dng2 = {"ĐgN", "GN"};
-//        RHS[] dngRHS = {new RHS(dng1), new RHS(dng2)};
-//        Rules.put("ĐgN", dngRHS);
-//
-//        String[] gn = {"GT", "DN"};
-//        RHS[] gnRHS = {new RHS(gn)};
-//        Rules.put("GN", gnRHS);
-//
-//        String[] noun1 = {"bò"};
-//        String[] noun2 = {"cỏ"};
-//        RHS[] nounRHS = {new RHS(noun1), new RHS(noun2)};
-//        Rules.put("DT", nounRHS);
-//
-//        String[] verb1 = {"gặm"};
-//        RHS[] verbRHS = {new RHS(verb1)};
-//        Rules.put("ĐgT", verbRHS);
-//
-//        String[] d1 = {"vàng"};
-//        String[] d2 = {"non"};
-//        RHS[] dRHS = {new RHS(d1), new RHS(d2)};
-//        Rules.put("TT", dRHS);
-//
-//        String n1 = "bò";
-//        String n2 = "cỏ";
-//        String v1 = "gặm";
-//        String det1 = "vàng";
-//        String det2 = "non";
-//        String[] noun = {"DT"};
-//        String[] verb = {"ĐgT"};
-//        String[] det = {"TT"};
-//
-//        Terminal n10 = new Terminal(n1, noun);
-//        Terminal n11 = new Terminal(n2, noun);
-//        Terminal v10 = new Terminal(v1, verb);
-//        Terminal det11 = new Terminal(det1, det);
-//        Terminal det12 = new Terminal(det2, det);
-//
-//        Terminals.add(n10);
-//        Terminals.add(n11);
-//        Terminals.add(v10);
-//        Terminals.add(det11);
-//        Terminals.add(det12);
-//        String[] s1 = {"NP", "VP"};
-//
-//        RHS[] sRHS = {new RHS(s1)};
-//        Rules.put("S", sRHS);
-//
-//        String[] vp1 = {"VP", "PP"};
-//        String[] vp2 = {"V", "NP"};
-//        RHS[] vpRHS = {new RHS(vp1), new RHS(vp2)};
-//        Rules.put("VP", vpRHS);
-//        String[] np1 = {"Det", "N"};
-//        String[] np2 = {"NP", "PP"};
-//        String[] np3 = {"Papa"};
-//        RHS[] npRHS = {new RHS(np1), new RHS(np2), new RHS(np3)};
-//        Rules.put("NP", npRHS);
-//
-//        String[] pp = {"P", "NP"};
-//        RHS[] ppRHS = {new RHS(pp)};
-//        Rules.put("PP", ppRHS);
-//
-//        String[] noun1 = {"caviar"};
-//        String[] noun2 = {"spoon"};
-//        RHS[] nounRHS = {new RHS(noun1), new RHS(noun2)};
-//        Rules.put("N", nounRHS);
-//
-//        String[] verb1 = {"ate"};
-//        RHS[] verbRHS = {new RHS(verb1)};
-//        Rules.put("V", verbRHS);
-//
-//        String[] p1 = {"with"};
-//        RHS[] pRHS = {new RHS(p1)};
-//        Rules.put("P", pRHS);
-//
-//        String[] d1 = {"the"};
-//        String[] d2 = {"a"};
-//        RHS[] dRHS = {new RHS(d1), new RHS(d2)};
-//        Rules.put("Det", dRHS);
-//
-//        String n1 = "caviar";
-//        String n2 = "spoon";
-//        String v1 = "ate";
-//        String p = "with";
-//        String np = "Papa";
-//        String det1 = "the";
-//        String det2 = "a";
-//        String[] noun = {"N"};
-//        String[] nounp = {"NP"};
-//        String[] verb = {"V"};
-//        String[] P = {"P"};
-//        String[] det = {"Det"};
-//
-//        Terminal n10 = new Terminal(n1, noun);
-//        Terminal n11 = new Terminal(n2, noun);
-//        Terminal v10 = new Terminal(v1, verb);
-//        Terminal p11 = new Terminal(p, P);
-//        Terminal np11 = new Terminal(np, nounp);
-//        Terminal det11 = new Terminal(det1, det);
-//        Terminal det12 = new Terminal(det2, det);
-//
-//        Terminals.add(n10);
-//        Terminals.add(n11);
-//        Terminals.add(v10);
-//        Terminals.add(p11);
-//        Terminals.add(np11);
-//        Terminals.add(det11);
-//        Terminals.add(det12);
+        // Rules
         // C
         String[] s1 = {"CN", "VN"};
         String[] s2 = {"TrN", "CN", "VN"};
@@ -273,9 +71,8 @@ public class SimpleGrammar extends Grammar {
         String[] dn5 = {"N", "ĐN"};
         String[] dn6 = {"N", "M"};
         String[] dn7 = {"N", "R"};
-        String[] dn8 = {"N", "A"};
         String[] dn9 = {"N", "I"};
-        RHS[] dnRHS = {new RHS(dn1), new RHS(dn2), new RHS(dn3), new RHS(dn4), new RHS(dn5), new RHS(dn6), new RHS(dn7), new RHS(dn8), new RHS(dn9)};
+        RHS[] dnRHS = {new RHS(dn1), new RHS(dn2), new RHS(dn3), new RHS(dn4), new RHS(dn5), new RHS(dn6), new RHS(dn7), new RHS(dn9)};
         Rules.put("DN", dnRHS);
         // N
         String[] n5 = {"M", "N"};
@@ -301,22 +98,79 @@ public class SimpleGrammar extends Grammar {
         RHS[] ppRHS = {new RHS(v1), new RHS(v2)};
         Rules.put("V", ppRHS);
 
-        String[] prouns = {"Tôi"};
-        RHS[] prounsRHS = {new RHS(prouns)};
-        Rules.put("P", prounsRHS);
+        //////
+//        String[] prouns = {"Tôi"};
+//        RHS[] prounsRHS = {new RHS(prouns)};
+//        Rules.put("P", prounsRHS);
+//
+//        String[] noun2 = {"cố gắng"};
+//        String[] noun3 = {"thi"};
+//        RHS[] nounRHS = {new RHS(noun2), new RHS(noun3)};
+//        Rules.put("V", nounRHS);
+//
+//        String[] verb = {"tốt"};
+//        RHS[] verbRHS = {new RHS(verb)};
+//        Rules.put("A", verbRHS);
+//
+//        String[] verb1 = {"sẽ"};
+//        RHS[] verb1RHS = {new RHS(verb1)};
+//        Rules.put("R", verb1RHS);
+// String p111 = "Tôi";
+//        String r211 = "sẽ";
+//        String v111 = "cố gắng";
+//        String v211 = "thi";
+//        String a211 = "tốt";
+//        String rnoun111 = "R";
+//        String pnoun111 = "P";
+//        String verb111 = "V";
+//        String anouns111 = "A";
+////
+//        Terminal p10 = new Terminal(p111, pnoun111);
+//        Terminal r11 = new Terminal(r211, rnoun111);
+//        Terminal v10 = new Terminal(v111, verb111);
+//        Terminal v11 = new Terminal(v211, verb111);
+//        Terminal a11324 = new Terminal(a211, anouns111);
+//
+//        Terminals.add(p10);
+//        Terminals.add(r11);
+//        Terminals.add(v10);
+//        Terminals.add(v11);
+//        Terminals.add(a11324);
+//        
+        String[] prouns1 = {"Bò"};
+        String[] prouns2 = {"cỏ"};
+        RHS[] prounsRHS = {new RHS(prouns1), new RHS(prouns2)};
+        Rules.put("N", prounsRHS);
 
-        String[] noun2 = {"cố gắng"};
-        String[] noun3 = {"thi"};
-        RHS[] nounRHS = {new RHS(noun2), new RHS(noun3)};
+        String[] noun3 = {"gặm"};
+        RHS[] nounRHS = {new RHS(noun3)};
         Rules.put("V", nounRHS);
 
-        String[] verb = {"tốt"};
-        RHS[] verbRHS = {new RHS(verb)};
+        String[] verb1 = {"vàng"};
+        String[] verb2 = {"non"};
+        RHS[] verbRHS = {new RHS(verb1), new RHS(verb2)};
         Rules.put("A", verbRHS);
 
-        String[] verb1 = {"sẽ"};
-        RHS[] verb1RHS = {new RHS(verb1)};
-        Rules.put("R", verb1RHS);
+        String n111 = "Bò";
+        String n211 = "cỏ";
+        String a221 = "vàng";
+        String v111 = "gặm";
+        String a211 = "non";
+        String noun111 = "N";
+        String verb111 = "V";
+        String anouns111 = "A";
+//
+        Terminal p10 = new Terminal(n111, noun111);
+        Terminal r11 = new Terminal(n211, noun111);
+        Terminal v10 = new Terminal(v111, verb111);
+        Terminal a11 = new Terminal(a211, anouns111);
+        Terminal a12 = new Terminal(a221, anouns111);
+
+        Terminals.add(p10);
+        Terminals.add(r11);
+        Terminals.add(v10);
+        Terminals.add(a11);
+        Terminals.add(a12);
     }
 
     private void initPOS() {
@@ -330,9 +184,12 @@ public class SimpleGrammar extends Grammar {
 //        POS.add("NP");
 //        POS.add("P");
 //        POS.add("Det");
+//        POS.add("A");
+//        POS.add("V");
+//        POS.add("R");
+//        POS.add("P");
         POS.add("A");
         POS.add("V");
-        POS.add("R");
-        POS.add("P");
+        POS.add("N");
     }
 }

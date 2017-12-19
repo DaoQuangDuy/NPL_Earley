@@ -24,12 +24,13 @@ public class Grammar {
         return rhs;
     }
 
-    public String[] getPOS(String terminal) {
-        String[] pos = null;
+    public String getPOS(String terminal) {
+        String pos = null;
         for (int i = 0; i < Terminals.size(); i++) {
             Terminal temp = (Terminal) Terminals.get(i);
             if (temp.getTerminal().equalsIgnoreCase(terminal)) {
                 pos = temp.getPOS();
+                break;
             }
         }
         return pos;
